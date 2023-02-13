@@ -1,6 +1,8 @@
+using CiberSystem.EF;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,7 +25,22 @@ namespace CiberSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+         
+            services.AddDbContext<CiBerDbContext>(x => x.UseSqlite(Configuration.GetConnectionString("CiBerDatabase")));
+
+
+            services.AddTransient<DBInitial>();
+            services.AddTransient<CiBerDbContext>();
+
+            IMvcBuilder builder = services.AddRazorPages();
+            var envi = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            if (envi==Environments.Development)
+            {
+                builder.AddRazorRuntimeCompilation();
+            }
+
             services.AddControllersWithViews();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +67,7 @@ namespace CiberSystem
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=User}/{action=Login}/{id?}");
             });
         }
     }

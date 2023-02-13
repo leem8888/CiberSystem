@@ -1,0 +1,8 @@
+
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.Sqlite
+microsoft.aspnetcore.mvc.razor.runtimecompilation
+
+attribute configuration
