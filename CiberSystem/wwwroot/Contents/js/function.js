@@ -44,3 +44,14 @@ $(document).on("click", "#createOrder", function () {
         }
     });
 });
+
+$(document).on("click", "#logOut", function () {
+    localStorage.removeItem('_CiberUserLogin');
+    delete_cookie('_CiberUserLogin');
+   
+   location.reload();
+});
+
+function delete_cookie(name) {
+    document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}

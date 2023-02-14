@@ -40,7 +40,7 @@ namespace CiberSystem.Controllers
             var user = await _loginModel.FindByNameAsync(request.Phone);
             if (user == null)
             {
-                ModelState.AddModelError(string.Empty, "Tài khoản không tồn tại");
+                ModelState.AddModelError(string.Empty, request.Phone !=null?  "Tài khoản không tồn tại" : "Vui lòng nhập tài khoản");
                 return View();
             }
 
@@ -49,7 +49,7 @@ namespace CiberSystem.Controllers
             var result = await _loginModel.PasswordSignInAsync(user, request.Pass);
             if (!result)
             {
-                ModelState.AddModelError(string.Empty, "Nhập sai mật khẩu");
+                ModelState.AddModelError(string.Empty, request.Pass != null ? "Nhập sai mật khẩu" : "Vui lòng nhập mật khẩu");
                 return View();
             }
 
