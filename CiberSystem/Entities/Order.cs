@@ -15,7 +15,11 @@ namespace CiberSystem.Entities
         [Required]
         public decimal Amount { get; set; }
         public DateTime OverDate { get; set; }
+        public int CustomerId { get; set; }
+        public int ProductId { get; set; }
+        [ForeignKey("CustomerId")]
         public Customer Customer { get; set; }
+        [ForeignKey("ProductId")]
         public Product Product { get; set; }
     }
 }

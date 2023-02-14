@@ -30,8 +30,5 @@ namespace CiberSystem.Entities
         [MinLength(3)]
         public string Address { get; set; }
 
-
-        public int RoleId { get; set; }
-        public AppRole AppRole { get; set; }
     }
 }

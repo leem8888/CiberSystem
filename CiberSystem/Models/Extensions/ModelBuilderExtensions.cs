@@ -25,13 +25,10 @@ namespace CiberSystem.Models.Extensions
             new Product() { Id = 3, Name = "Laptop Asus TUF Gaming FX506LHB", Price = 100000, Description = "the description of Laptop Asus TUF Gaming FX506LHB", Quantity = 20, CategoryID = 3 },
             new Product() { Id = 4, Name = "Laptop MSI Gaming GF63", Price = 100000, Description = "the description of Laptop MSI Gaming GF63", Quantity = 20, CategoryID = 3 }
             );
-            modelBuilder.Entity<AppRole>().HasData(
-             new AppRole() { Id = 1, Description = "admin" },
-            new AppRole() { Id = 2, Description = "user" }
-          );
+          
             modelBuilder.Entity<Customer>().HasData(
-          new Customer() { Id = 1, Name = "Tuấn", Phone = "0353590123", Pass = "abcd1234", Address = "Phú thọ", RoleId = 1 },
-          new Customer() { Id = 2, Name = "Trang", Phone = "0888888880", Pass = "abcd1234@", Address = "China", RoleId = 2 }
+          new Customer() { Id = 1, Name = "Tuấn", Phone = "0353590123", Pass = "abcd1234", Address = "Phú thọ" },
+          new Customer() { Id = 2, Name = "Trang", Phone = "0888888880", Pass = "abcd1234@", Address = "China" }
 
           );
 

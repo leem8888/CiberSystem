@@ -4,5 +4,6 @@ Microsoft.EntityFrameworkCore.Design
 Microsoft.EntityFrameworkCore.Tools
 Microsoft.EntityFrameworkCore.Sqlite
 microsoft.aspnetcore.mvc.razor.runtimecompilation
+Microsoft.AspNetCore.Authentication.JwtBearer
 
 attribute configuration
