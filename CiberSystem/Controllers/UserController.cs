@@ -31,7 +31,7 @@ namespace CiberSystem.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            var cate = _context.Categories.FirstOrDefault();
+           // throw new Exception ("1231");
             return View();
         }
         [HttpPost]
@@ -95,5 +95,6 @@ namespace CiberSystem.Controllers
 
             return principal;
         }
+        
     }
 }

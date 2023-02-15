@@ -37,7 +37,7 @@ namespace CiberSystem.Models.Order
             {
                 var query = (from p in _context.Products
                              where p.Id == productId
-                             select p).First();
+                             select p).FirstOrDefault();
                 query.Quantity = query.Quantity - amountOrder;
 
                 await _context.SaveChangesAsync();

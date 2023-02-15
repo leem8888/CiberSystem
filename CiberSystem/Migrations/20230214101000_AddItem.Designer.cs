@@ -3,14 +3,16 @@ using System;
 using CiberSystem.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CiberSystem.Migrations
 {
     [DbContext(typeof(CiBerDbContext))]
-    partial class CiBerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230214101000_AddItem")]
+    partial class AddItem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

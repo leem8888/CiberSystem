@@ -13,7 +13,7 @@ namespace CiberSystem.Entities
         [Key]
         public int Id { get; set; }
         [Required]
-        public decimal Amount { get; set; }
+        public int Amount { get; set; }
         public DateTime OverDate { get; set; }
         public int CustomerId { get; set; }
         public int ProductId { get; set; }

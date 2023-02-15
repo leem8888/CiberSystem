@@ -31,7 +31,7 @@ namespace CiberSystem.Controllers
         }
         [HttpGet]
 
-        public async Task<IActionResult> Index(string keyWords, int page)
+        public async Task<IActionResult> Index()
         {
 
             string cookieValueFromReq = Request.Cookies["_CiberUserLogin"];
@@ -41,7 +41,7 @@ namespace CiberSystem.Controllers
                 OrderViewItem item = new OrderViewItem();               
                 item.NameCus = claim.Claims.SingleOrDefault(p => p.Type == "name")?.Value;
                 int idCus = Int32.Parse(claim.Claims.SingleOrDefault(p => p.Type == "id")?.Value);
-                int pageSize = 10;
+             
                 //danh sach product cho popup
                 item.Products = await _orderModel.GetAllProduct();
 
