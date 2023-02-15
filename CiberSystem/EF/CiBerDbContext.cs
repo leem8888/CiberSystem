@@ -11,7 +11,7 @@ namespace CiberSystem.EF
 {
     public class CiBerDbContext : DbContext
     {
-        public CiBerDbContext(DbContextOptions options) :base(options)
+        public CiBerDbContext(DbContextOptions options) : base(options)
         {
 
         }
@@ -27,20 +27,20 @@ namespace CiberSystem.EF
         {
             base.OnModelCreating(modelBuilder);
 
-        //    modelBuilder
-           //.Entity<AppRole>(
-           //    eb =>
-           //    {
-           //        eb.HasNoKey();             
-           //    });
-           modelBuilder.Seed();
+            //    modelBuilder
+            //.Entity<AppRole>(
+            //    eb =>
+            //    {
+            //        eb.HasNoKey();             
+            //    });
+            modelBuilder.Seed();
 
 
         }
-        public DbSet<Category>  Categories { get; set; }
-        public DbSet<Customer>  Customers{ get; set; }
-        public DbSet<Order>  Orders{ get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
-      
-}
+
+    }
 }
